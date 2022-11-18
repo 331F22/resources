@@ -1,5 +1,7 @@
 # Setup Instructions
-* Diff between 30xx and 50xx
+On the school server, the client will be running on port 50xx and the server
+will be running on port 30xx. The following instructions are written primarily
+as if you were using command line.
 
 ## 1. Clone Repo
 Clone the Powder/Pierre/Alpine repository
@@ -31,7 +33,8 @@ machine but have it set to your port 50xx on the server.
 ls -a
 ```
 
-1. In the client directory, copy the .env.sample file to .env
+1. In the client directory, copy the .env.sample file to .env or in any way copy
+the .env.sample file to .env.
 ```
 cp .env.sample .env
 ```
@@ -75,6 +78,10 @@ forever start -c "npm start" <path_to_server_dir>
 ```
 
 ### tmux
+Here is a [tmux cheatsheet](https://gist.github.com/MohamedAlaa/2961058) with
+some helpful commands and tricks. The bindkey on the school server is ctrl-A
+not ctrl-B.
+
 1. Start a new tmux window
 ```
 tmux
@@ -84,3 +91,21 @@ or attach to an existing session (tmux attach if only one session running)
 tmux ls
 tmux attach -t <session_name>
 ```
+
+2. cd into the client directory and run
+```
+npm start
+```
+
+3. Create a second way to run the server
+a. Detach from the current tmux session (ctrl-A then d) and open a second tmux
+window
+b. ctrl-A then " (shift-") to split the tmux session. ctrl-A then o to switch
+between panes.
+
+4. cd into the server directory and run
+```
+npm start
+```
+5. To exit the tmux window, you can close your terminal or detach from the
+session (ctrl-A then d).
