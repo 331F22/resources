@@ -74,14 +74,39 @@ npm install
 ```
 
 
-## Using the Database
+## 4. Use the Database
+On your local machine, you will need an sql server running. You can do this
+using Ammps. On the school server, you don't need to start anything.
 
 
-## 4. Run
-You can run things using Forever or tmux. If you use tmux, you will be able to
-see the output which may be helpful in troubleshooting errors.
+### Initialize
+You will need to initialize the tables in the database for things to run
+properly. This will only need to be done once, per database. (Both on your local
+machine and dbxx on the school server.) To do this, you can either create the
+needed tables in the mysql shell or use the template given in the DB repo. Those
+instructions follow. For more options/details see
+[this reference](https://dev.mysql.com/doc/refman/8.0/en/mysql-batch-commands.html).
 
-### npm
+1. Clone the DB repo outside of your project repo.
+```
+git clone https://github.com/331F22/DB.git
+```
+2. Start a mysql shell and source the .sql files. On your local machine, you
+will need to navigate Ammps to do so. If you are on the school server run
+```
+mysql -u userxx -p
+use dbxx;
+source DB/bridger.sql
+show tables;
+exit;
+```
+
+## 5. Run
+You can run things using Forever or tmux on the school server to keep them
+running. If you use tmux, you will be able to see the output which may be
+helpful in troubleshooting errors.
+
+### npm start
 You can start both the client and server by using "npm start" in the command
 line. However, if you are not using tmux, it will not stay running one you
 close your connection to the server. Using npm start is a good way to see the
@@ -105,7 +130,7 @@ not ctrl-B.
 ```
 tmux
 ```
-or attach to an existing session (tmux attach if only one session running)
+**or** attach to an existing session (tmux attach if only one session running)
 ```
 tmux ls
 tmux attach -t <session_name>
@@ -116,11 +141,9 @@ tmux attach -t <session_name>
 npm start
 ```
 
-3. Create a second way to run the server (either or)
-    1. Detach from the current tmux session (ctrl-A then d) and open a second
-    tmux window
-    2. ctrl-A then " (shift-") to split the tmux session. ctrl-A then o to
-    switch between panes.
+3. Create a second way to run the server: detach from the current tmux session
+(ctrl-A then d) and open a second tmux window **or** ctrl-A then " (shift-") to
+split the tmux session. ctrl-A then o to switch between panes.
 
 4. cd into the server directory and run
 ```
