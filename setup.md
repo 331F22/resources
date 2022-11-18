@@ -97,11 +97,11 @@ tmux attach -t <session_name>
 npm start
 ```
 
-3. Create a second way to run the server
-a. Detach from the current tmux session (ctrl-A then d) and open a second tmux
-window
-b. ctrl-A then " (shift-") to split the tmux session. ctrl-A then o to switch
-between panes.
+3. Create a second way to run the server (either or)
+    1. Detach from the current tmux session (ctrl-A then d) and open a second
+    tmux window
+    2. ctrl-A then " (shift-") to split the tmux session. ctrl-A then o to
+    switch between panes.
 
 4. cd into the server directory and run
 ```
