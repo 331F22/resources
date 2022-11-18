@@ -4,11 +4,11 @@ will be running on port 30xx. The following instructions are written primarily
 as if you were using command line.
 
 ## 1. Clone Repo
-Clone the Powder/Pierre/Alpine repository
+Clone the main branch of the Powder/Pierre/Alpine repository
 ```
 git clone <repo_url.git>
 ```
-You can also clone a specific branch of the repository if it already exits
+**or** you can clone a specific branch of the repository if it already exits
 ```
 git clone --single-branch --branch <branch_name> <repo_url.git>
 ```
