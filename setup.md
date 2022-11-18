@@ -43,6 +43,13 @@ cp .env.sample .env
 they should be for you on your local machine or the school server. (You can also
 use FileZilla to copy the .env files to the school server.) You should not
 change the .env.sample file unless you are adding a new variable to the project.
+    * clinet REACT\_APP\_HOST is the url to connect to the node database server.
+    You will need to modify the 3000 port to what you used for the server and
+    switch between localhost on your local machine and csci331.cs.montana.edu
+    on the school server. There are comments next to which is which in the
+    .env.sample file.
+    * server DBPORT is the port the mysql is using. You will not need to change
+    this on the server but may need to change it on your local machine.
 3. Repeat 1 and 2 in the server directory
 
 
@@ -66,9 +73,21 @@ In BOTH the client and server directories run the command
 npm install
 ```
 
+
+## Using the Database
+
+
 ## 4. Run
 You can run things using Forever or tmux. If you use tmux, you will be able to
 see the output which may be helpful in troubleshooting errors.
+
+### npm
+You can start both the client and server by using "npm start" in the command
+line. However, if you are not using tmux, it will not stay running one you
+close your connection to the server. Using npm start is a good way to see the
+output and get feedback when first testing. This way you know if you got an
+error and can fix it before using something like forever to start.
+
 
 ### Forever
 If you are in the client or server directory you use ./ for the path portion.
